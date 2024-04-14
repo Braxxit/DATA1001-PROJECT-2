@@ -1,0 +1,23 @@
+---
+title: "Visualization of data"
+output: html_document
+date: "2024-04-14"
+---
+
+```{r}
+library(readr)
+Responses <- read_csv("C:/Users/br4xt/Desktop/DATA1001/Project-2/Project 2 responses - Sheet1.csv", show_col_types = FALSE)
+dim(Responses$Age)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# Shows barplot of ages of survey participants
+library(tidyverse)
+library(readr)
+Responses = read_csv("C:/Users/br4xt/Desktop/DATA1001/Project-2/Project 2 responses - Sheet1.csv", show_col_types = FALSE)
+ggplot(Responses) + 
+  geom_histogram(aes(x = Age), bins=30) +
+  scale_x_continuous(breaks = Responses$Age) 
+
+```
+
