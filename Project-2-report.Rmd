@@ -71,7 +71,7 @@ We received 31 responses for our survey. Each row represents a survey response w
 
 ### Limitations
 
-Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.
+Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.Also, the sleep quality is biased on how people judge their own sleep quality, because we are aware that everyone has their own perspective about what a good sleep quality is.
 
 ### Assumptions
 We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results.
@@ -89,15 +89,31 @@ We will investigate the relationship between the sleeping behavior of University
 
 ## Research Question 1
 
-Insert text and analysis.
+How do exercise affects one's sleep quality and hours
+```{r message = FALSE}
+library(tidyverse)
+ggplot(Responses, aes(x = `Quality of sleep`)) + geom_bar(aes(fill= `Phone before bed`))
 
-Summary:
+```
+
+
+Summary: As we can see above, Although it doesn't apply to all cases, people who use phone before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
 
 ## Research Question 2
 
-Insert text and analysis.
+How phone usage before bed can affect sleep time
 
-Summary:
+```{r message = FALSE, warning = FALSE}
+library(hms)
+library(dplyr)
+library(lubridate)
+Responses <- Responses %>%
+  mutate(`Sleep time` = if_else(hour(Responses$`Sleep time`) > 9 & hour(Responses$`Sleep time`) < 12, Responses$`Sleep time` + as_hms(12:00:00), Responses$`Sleep time`))
+ggplot(Responses, aes(x = `Phone before bed`, y=`Sleep time`)) + geom_boxplot()
+```
+
+
+Summary: As we can see above, people who use their phone right before bed tend to have way late night sleep, we assume this is caused by scrolling through social media that postponed their sleep time.
 
 # References
 

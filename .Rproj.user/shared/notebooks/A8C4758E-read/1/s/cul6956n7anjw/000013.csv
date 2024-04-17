@@ -1,5 +1,0 @@
-"0","library(readr)"
-"0","Responses <- read_csv(""C:/Users/br4xt/Desktop/DATA1001/Project-2/Project 2 responses - Sheet1.csv"", show_col_types = FALSE)"
-"0","dim(Responses$Age)"
-"1","NULL
-"

@@ -1,8 +1,0 @@
-"0","# Shows barplot of ages of survey participants"
-"0","library(tidyverse)"
-"0","library(readr)"
-"0","Responses = read_csv(""./Project 2 responses - Sheet1.csv"", show_col_types = FALSE)"
-"0","Responses = filter(Responses, Age < 30)"
-"0","ggplot(Responses) + "
-"0","  geom_histogram(aes(x = Age), bins=30) +"
-"0","  labs(y = ""Count"")"
