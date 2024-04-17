@@ -1,0 +1,62 @@
+---
+title: "Graphs"
+output: html_document
+date: "2024-04-17"
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+library(rafalib)
+library(ggplot2)
+library(dplyr)
+Responses = read.csv("Project 2 responses - Sheet1.csv")
+
+```
+Cleaning the data of irregular values using filter
+```{r, warning=FALSE, message=FALSE}
+Responses = filter(Responses, Age > 0 & Age < 150, is.na(as.numeric(Caffeine.per.day)) == F)
+```
+
+
+Sorting sleep time data
+```{r}
+print(Responses$Sleep.time)
+sleep_time_levels <- c("8:00:00 PM", "8:30:00 PM", "9:00:00 PM", "9:30:00 PM", 
+                       "10:00:00 PM","10:30:00 PM","11:00:00 PM","11:30:00 PM",
+                       "12:00:00 AM","12:30:00 AM","1:00:00 AM", "1:30:00 AM",
+                       "2:00:00 AM", "10:00:00 AM", "11:00:00 AM")
+sleep_time_sorted = table(factor(Responses$Sleep.time, sleep_time_levels))
+print(sleep_time_sorted)
+```
+Below are some graphs we could add to the report
+```{r, warning=FALSE, message=FALSE}
+ggplot(Responses) +
+  geom_bar(aes(factor(Sleep.time, sleep_time_levels), fill = Phone.before.bed)) +
+  scale_y_continuous(breaks = 1:10) +
+  ylab("Frequency") +
+  xlab("Sleeping Times") +
+  coord_flip()
+```
+
+```{r}
+ggplot(Responses) +
+  geom_bar(aes(Hours.of.sleep, fill = Phone.before.bed)) +
+  scale_y_continuous(breaks = 1:10) +
+  ylab("Frequency") +
+  xlab("Sleep duration")
+```
+
+```{r}
+ggplot(Responses) + 
+  geom_bar(aes(Hours.of.sleep, fill = Caffeine.per.day)) + 
+  scale_y_continuous(breaks = 1:10) +
+  xlab("Sleep duration") +
+  ylab("Frequency")
+```
+
+```{r}
+ggplot(Responses) + 
+  geom_bar(aes(Quality.of.sleep, fill = Phone.before.bed)) +
+  scale_y_continuous(breaks = 1:15) +
+  xlab("Quality of sleep") +
+  ylab("Frequency")
+```
