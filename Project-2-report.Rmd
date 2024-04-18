@@ -58,7 +58,7 @@ ggplot(Responses) +
 
 ### Structure
 
-We received 31 responses for our survey. Each row represents a survey response while each of the columns represent our variables. This survey contained both quantitative (Hours of sleep, Screen time, Phone before bed) and qualitative (Exercise, Time of medication) variables. 
+We received 30 responses for our survey. Each row represents a survey response while each of the columns represent our variables. This survey contained both quantitative (Hours of sleep, Screen time, Phone before bed) and qualitative (Exercise, Time of medication) variables. 
 
 ### Limitations
 
