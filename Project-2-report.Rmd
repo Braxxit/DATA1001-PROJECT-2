@@ -65,7 +65,7 @@ We received 31 responses for our survey. Each row represents a survey response w
 Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.Also, the sleep quality is biased on how people judge their own sleep quality, because we are aware that everyone has their own perspective about what a good sleep quality is.
 
 ### Assumptions
-We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results.
+We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results and will be assumed to be jokes, despite lack of evidence.
 
 ### Data Clearing
 For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results.
