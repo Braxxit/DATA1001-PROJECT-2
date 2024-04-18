@@ -68,7 +68,7 @@ Not everyone has a fixed sleeping schedule. It is quite likely that our survey p
 We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results and will be assumed to be jokes, despite lack of evidence.
 
 ### Data Clearing
-For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results.
+For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results. Responses with age being older than 30 were excluded, as we are targeting young adults 30 and below. Values that are not numerical under 'caffeine per day' has been set as non applicaable data. 
 
 
 <br>
