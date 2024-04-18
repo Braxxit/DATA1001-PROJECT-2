@@ -109,9 +109,9 @@ ggplot(Responses, aes(x = `Phone before bed`, y=`Sleep time`)) + geom_boxplot()
 ```
 
 ```{r, message = F, warning = F}
-Responses$Hours.of.sleep <- as.numeric(Responses$Hours.of.sleep)
-Responses$Screen.time <- as.numeric(Responses$Screen.time)
-ggplot(Responses, aes(x=Screen.time, y=Hours.of.sleep)) +
+Responses$`Hours of sleep` <- as.numeric(Responses$`Hours of sleep`)
+Responses$`Screen time` <- as.numeric(Responses$`Screen time`)
+ggplot(Responses, aes(x=`Screen time`, y=`Hours of sleep`)) +
   geom_point() + 
   geom_smooth(method = 'lm', se = T) +
   scale_x_continuous(breaks = 0:16) + 
