@@ -108,6 +108,15 @@ Responses <- Responses %>%
 ggplot(Responses, aes(x = `Phone before bed`, y=`Sleep time`)) + geom_boxplot()
 ```
 
+```{r, message = F, warning = F}
+Responses$Hours.of.sleep <- as.numeric(Responses$Hours.of.sleep)
+Responses$Screen.time <- as.numeric(Responses$Screen.time)
+ggplot(Responses, aes(x=Screen.time, y=Hours.of.sleep)) +
+  geom_point() + 
+  geom_smooth(method = 'lm', se = T) +
+  scale_x_continuous(breaks = 0:16) + 
+  labs(x = "Screen Time (Hours)", y = "Sleeping Duration (Hours)", title = "Scatter plot of Sleeping Duration against Screen Time")
+```
 
 Summary: As we can see above, people who use their phone right before bed tend to have way late night sleep, we assume this is caused by scrolling through social media that postponed their sleep time.
 
