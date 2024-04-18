@@ -1,6 +1,6 @@
 ---
 title: "Factors affecting Sleep"
-author: "540214264, "
+author: "540214264, 540754276, 540062713, 540286434, 540301162, 540496066"
 subtitle: "Project 2"
 date: "University of Sydney | DATA1001 | APRIL 2024"
 
@@ -77,7 +77,7 @@ Not everyone has a fixed sleeping schedule. It is quite likely that our survey p
 We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results.
 
 ### Data Clearing
-tbc
+For data clearing, we will use a function called filter() to remove any illogical results that may damage the reliability of our results.
 
 
 <br>
