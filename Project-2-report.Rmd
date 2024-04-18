@@ -22,8 +22,9 @@ output:
 
 # Executive Summary
 
--   The aim of this report is to ascertain the main factor causing sleep deprivation among young adults today.
+-   The aim of this report is to ascertain the main factor causing sleep deprivation among young adults today
 -   Data collected shows a positive correlation between screen time and quality of sleep 
+-   Those who use their phones before bedtime tend to summer from worse quality sleep compared to those who don't 
 
 <br>
 
@@ -40,7 +41,6 @@ output:
 ### Source
 
 The data used in this report was collected from university students from 3/28/24 to 4/14/24 through the usage of Google Forms:
-<br>
 (https://forms.gle/xxXj6JNymotvkEot5)
 
 ```{r, warning=FALSE, message=FALSE}
@@ -62,13 +62,13 @@ We received 30 responses for our survey. Each row represents a survey response w
 
 ### Limitations
 
-Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.Also, the sleep quality is biased on how people judge their own sleep quality, because we are aware that everyone has their own perspective about what a good sleep quality is.
+Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.Also, the sleep quality is biased on how people judge their own sleep quality, because we are aware that everyone has their own perspective about what a good sleep quality is. Furthermore, we can see from the graph that most of our responses are from those who are 18 or 19. There is also a very small range of ages from 17 - 23 years with no responses from ages 21 and 22.
 
 ### Assumptions
-We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results.
+We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results and will be assumed to be jokes, despite lack of evidence.
 
 ### Data Clearing
-For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results.
+For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results. Responses with age being older than 30 were excluded, as we are targeting young adults 30 and below. Values that are not numerical under 'caffeine per day' has been set as non applicable data.
 
 
 <br>
@@ -76,11 +76,16 @@ For data clearing, we will use a function called `filter()` to remove any illogi
 <h2> Research theme </h2>
 We will investigate the relationship between the sleeping behavior of University students and the activities they partake in during their normal day.
 
-<br>
 
 ## Research Question 1
 
 How does phone usage before bed affects one's sleep quality and hours?
+
+```{r, warning=FALSE, message=FALSE}
+table(Responses$Age)
+```
+
+
 
 ```{r message = FALSE, warning = F}
 library(tidyverse)
@@ -91,6 +96,7 @@ ggplot(Responses, aes(x = `Quality of sleep`)) +
   scale_y_continuous(breaks = 0:15) +
   guides(fill = guide_legend(reverse = T))
 ```
+
 
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -111,8 +117,7 @@ ggplot(Responses) +
 ```
 
 
-
-Summary: As we can see above, Although it doesn't apply to all cases, people who use their phones before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
+In most cases, people who use their phones before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality ). The average of those who don't use a phone before bed have better quality of sleep compared to those who do. However, the data is too spread out with very weak correlation between phone usage and sleeping times, making it inconclusive to whether or not phone usage affects sleeping time.
 
 
 
@@ -148,26 +153,42 @@ ggplot(l_m, aes(x=.fitted, y=.resid)) +
 ```
 
 
-From the residual plot above, we can see that the residual plot appears to be random and supports the idea that the linear fit is appropriate for the data.
+From the residual plot above, we can see that the residual plot appears to be random and supports the idea that the linear fit is appropriate for the data. Showing a lack of correlation between sleeping duration and screen time, suggesting that sleep duration is not affected by screen during the day.
 
 
 Summary:<br>
 The data we have received is insufficient to make a hypothesis as to whether screen time has an affect on duration of sleep.
 
+## Article
+Studies exploring the relationship between screen time and quality corresponded with data collected to an extent; with Asamaa's study (2023) observing that people who used smartphones before bedtime experienced significantly worse sleep quality with 64.2% reporting issues, compared to only 31.7% of non-users. Furthermore, smartphone users at bedtime also reported to have shorter duration fo sleep.
+
+
 # References
 
 Style: APA
+<br>
+Asmaa Abdelghany Elsheikh, Safaa Abdelfattah Elsharkawy, & Doaa Sadek Ahmed. (2023). Impact of smartphone use at bedtime on sleep quality and academic activities among medical students at Al -Azhar University at Cairo. Journal of Public Health. https://doi.org/10.1007/s10389-023-01964-8
 
+‌
 <br>
 
 # Acknowledgment
 24/2/2024 Online |Braxton, William, Vincent, Alex, Mingye|- Figuring out what we want to explore and formulating research question
-2/3/2024 Online |Braxton, William, Vincent, Alex, Mingye|- Started to list out variables and formulating questions
-3/3/2024 Online |Braxton, William, Vincent, Alex, Mingye| - Finished off Project 1 and created a survey in Google forms
-10/03/2024 Online on discord |Braxton, William, Vincent, Alex, Damara, Mingye| - Designing the plan and research topic for Project plan
+<br>
+2/3/2024 Online |Braxton, William, Vincent, Mingye|- Started to list out variables and formulating questions
+<br>
+3/3/2024 Online |Braxton, William, Vincent, Mingye| - Finished off Project 1 and created a survey in Google forms
+<br>
+10/03/2024 Online on discord |Braxton, William, Vincent, Damara| - Designing the plan and research topic for Project plan
+<br>
 14/03/2024 After Lab |Braxton, William, Vincent, Alex, Damara, Mingye| - Creating the survey questions and the google form
+<br>
 28/03/2024 After Lab |Braxton, William, Mingye, Damara| - Posting the survey to obtain results
+<br>
 15/04/2024 Online on Github |Braxton| - Creating github repo and initial scaffolding for report
+<br>
 17/04/2024 Online on Github |Damara| - Added research questions
+<br>
 18/04/2024 After Lab Online |Braxton, William, Vincent, Alex, Mingye, Damara| - Communicating report data 
-18/04/2024 Online on Github and Discord | Braxton, William, Vincent, Damara, Mingye| - Writing out report 
+<br>
+18/04/2024 Online on Github and Discord | Braxton, William, Vincent, Damara| - Writing out report 
