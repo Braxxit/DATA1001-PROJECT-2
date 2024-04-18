@@ -89,19 +89,24 @@ We will investigate the relationship between the sleeping behavior of University
 
 ## Research Question 1
 
-How do exercise affects one's sleep quality and hours
-```{r message = FALSE}
-library(tidyverse)
-ggplot(Responses, aes(x = `Quality of sleep`)) + geom_bar(aes(fill= `Phone before bed`))
+How does phone usage before bed affects one's sleep quality and hours
 
+```{r message = FALSE, warning = F}
+library(tidyverse)
+ggplot(Responses, aes(x = `Quality of sleep`)) + 
+  geom_bar(aes(fill= `Phone before bed`)) +
+  ggtitle("Quality of Sleep ") +
+  labs(x = "Quality of Sleep", y = "Frequency", fill = "Phone usage before bed") +
+  scale_y_continuous(breaks = 0:15) +
+  guides(fill = guide_legend(reverse = T))
 ```
 
 
-Summary: As we can see above, Although it doesn't apply to all cases, people who use phone before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
+Summary: As we can see above, Although it doesn't apply to all cases, people who use their phones before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
 
 ## Research Question 2
 
-How phone usage before bed can affect sleep time
+How does screen time influence sleeping duration
 
 ```{r message = FALSE, warning = FALSE}
 library(hms)
