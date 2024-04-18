@@ -92,14 +92,8 @@ ggplot(Responses, aes(x = `Quality of sleep`)) +
   guides(fill = guide_legend(reverse = T))
 ```
 
-
-Summary: As we can see above, Although it doesn't apply to all cases, people who use their phones before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
-
-## Research Question 2
-
-How does screen time influence duration of sleep?
-
 ```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
 sleep_time_levels <- c("20:00:00", "20:30:00", "21:00:00", "21:30:00", 
                        "22:00:00","22:30:00","23:00:00","23:30:00",
                        "00:00:00","00:30:00","01:00:00", "01:30:00",
@@ -116,7 +110,16 @@ ggplot(Responses) +
 
 ```
 
-The bar chart above allows us to draw a conclusion that usage of phones before bed leads to a much later sleeping time. Thus, by assuming that people who sleep late get lesser hours of sleep, we can make the claim that the usage of phones before bed also leads to a shorter duration of sleep. 
+
+
+Summary: As we can see above, Although it doesn't apply to all cases, people who use their phones before bed tend to have lower sleep quality. We assume those who still have good sleep quality despite using phone before bed are special case ( they may exercise regularly, thus making them having better sleep quality )
+
+
+
+
+## Research Question 2
+
+How does screen time influence duration of sleep?
 
 ```{r, message = F, warning = F}
 Responses$`Hours of sleep` <- as.numeric(Responses$`Hours of sleep`)
@@ -133,7 +136,7 @@ cor(Responses$`Screen time`, Responses$`Hours of sleep`)
 ```
 Correlation Coefficient = 0.0214867
 <br>
-From this linear regression graph, we can conclude that sleeping duration is not influenced by screen time since the correlation coefficient shown above is near 0 and positive. There are 2 reasons as to why we cannot use this as an anti-hypothesis to our first claim. Firstly, the area of the standard error above is incredibly significant. Hence, it could also be said that the projected values shown above are far from accurate as well. Secondly, a high amount of screen time does not necessarily mean that the user uses their phones right before bed.
+From this linear regression graph, we can conclude that sleeping duration is not influenced by screen time since the correlation coefficient shown above is near 0 and positive. However, the area of the standard error above is incredibly significant. Hence, it could also be said that the projected values shown above are far from accurate as well.
 
 ```{r}
 l_m = lm(`Hours of sleep` ~ `Screen time`, Responses)
@@ -143,10 +146,13 @@ ggplot(l_m, aes(x=.fitted, y=.resid)) +
   xlab("Fitted") +
   geom_hline(yintercept = 0, color="blue")
 ```
+
+
 From the residual plot above, we can see that the residual plot appears to be random and supports the idea that the linear fit is appropriate for the data.
 
+
 Summary:<br>
-As per our first claim, we hypothesized that duration of sleep is reduced due to the usage of phones before bed
+The data we have received is insufficient to make a hypothesis as to whether screen time has an affect on duration of sleep.
 
 # References
 
