@@ -60,3 +60,13 @@ ggplot(Responses) +
   xlab("Quality of sleep") +
   ylab("Frequency")
 ```
+
+
+```{r message = FALSE, warning = FALSE}
+library(hms)
+library(dplyr)
+library(lubridate)
+Responses <- Responses %>%
+  mutate(`Sleep time` = if_else(hour(Responses$`Sleep time`) > 9 & hour(Responses$`Sleep time`) < 12, Responses$`Sleep time` + as_hms(12:00:00), Responses$`Sleep time`))
+ggplot(Responses, aes(x = `Phone before bed`, y=`Sleep time`)) + geom_boxplot()
+```
