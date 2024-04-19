@@ -151,11 +151,10 @@ ggplot(Responses, aes(x=`Screen time`, y=`Hours of sleep`)) +
   labs(x = "Screen Time (Hours)", y = "Sleeping Duration (Hours)", title = "Scatter plot of Sleeping Duration against Screen Time")
 ```
 ```{r, message = F, warning = F}
-correlation = cor(Responses$`Screen time`, Responses$`Screen time`)
+correlation = cor(Responses$`Screen time`, Responses$`Hours of sleep`)
 print(paste0("Correlation Coefficient = ", correlation))
 ```
 
-Correlation Coefficient = 0.0214867
 <br>
 From this linear regression graph, we can conclude that sleeping duration is not influenced by screen time since the correlation coefficient shown above is near 0 and positive. However, the area of the standard error above is incredibly significant. Hence, it could also be said that the projected values shown above are far from accurate as well.
 
