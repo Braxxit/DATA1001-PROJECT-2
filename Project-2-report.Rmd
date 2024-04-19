@@ -152,7 +152,7 @@ ggplot(Responses, aes(x=`Screen time`, y=`Hours of sleep`)) +
 ```
 ```{r, message = F, warning = F}
 correlation = cor(Responses$`Screen time`, Responses$`Hours of sleep`)
-print(paste0("Correlation Coefficient = ", correlation))
+print(paste0("Correlation Coefficient = ", correlation), quote=F)
 ```
 
 <br>
