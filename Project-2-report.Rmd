@@ -208,4 +208,24 @@ Asmaa Abdelghany Elsheikh, Safaa Abdelfattah Elsharkawy, & Doaa Sadek Ahmed. (20
 <br>
 18/04/2024 After Lab Online |Braxton, William, Vincent, Alex, Mingye, Damara| - Communicating report data 
 <br>
-18/04/2024 Online on Github and Discord | Braxton, William, Vincent, Damara| - Writing out report 
+18/04/2024 Online on Github and Discord |Braxton, William, Vincent, Damara| - Writing out report 
+<br>
+19/04/2024 Online on Github and Whatsapp |Braxton, William, Vincent, Mingye, Damara| - Finalising and submitting report
+
+##Resources
+ - https://rc2e.com/
+ - https://www.r-project.org/help.html
+ - https://www.rdocumentation.org/
+ - https://stackoverflow.com/questions/75981688/trying-to-compare-two-dataframes-with-different-rows-and-columns-in-r
+ - https://stackoverflow.com/questions/70559246/editing-tables-with-r-studio
+ - https://stackoverflow.com/questions/58359098/how-to-compare-two-variable-columns-with-each-other-in-r
+ - https://stackoverflow.com/questions/53473077/object-not-found-when-running-lm
+ - https://stackoverflow.com/questions/73568484/r-object-not-found-error-despite-it-exists-in-the-data
+ - https://stackoverflow.com/questions/1296646/sort-order-data-frame-rows-by-multiple-columns
+ - https://stackoverflow.com/questions/3418128/how-to-convert-a-factor-to-integer-numeric-without-loss-of-information
+ - https://edstem.org/au/courses/15212/discussion/1894484
+ - https://edstem.org/au/courses/15212/discussion/1781117
+ - https://edstem.org/au/courses/15212/discussion/1805141
+ - https://edstem.org/au/courses/15212/discussion/1823837
+ - https://edstem.org/au/courses/15212/discussion/1845346
+ - https://edstem.org/au/courses/15212/discussion/1875872
