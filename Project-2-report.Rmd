@@ -24,7 +24,7 @@ output:
 
 -   The aim of this report is to ascertain the main factor causing sleep deprivation among young adults today
 -   Data collected shows a positive correlation between screen time and quality of sleep 
--   Those who use their phones before bedtime tend to suffer from worse sleeping quality compared to those who don't 
+-   Those who use their phones before bedtime tend to summer from worse quality sleep compared to those who don't 
 
 <br>
 
@@ -72,10 +72,10 @@ cat("Responses: ", paste(response_counts, collapse = " "), "\n")
 
 ### Limitations
 
-Not everyone has a fixed sleeping schedule. It is quite likely that our survey participants had fluctuating hours of sleep throughout their weeks. This could be due to their differing school timetables, causing them to sleep and wake up at varying times.Also, the sleep quality is biased on how people judge their own sleep quality, because we are aware that everyone has their own perspective about what a good sleep quality is. Furthermore, we can see from the graph that most of our responses are from those who are 18 or 19. There is also a very small range of ages from 17 - 23 years with no responses from ages 21 and 22.
+The participants in our survey likely had varying sleep schedules, influenced by factors like school timetables. Additionally, sleep quality is subjective, as individuals perceive it differently. Most respondents were aged 18 or 19, with a narrow age range from 17 to 23 and no responses from ages 21 and 22.
 
 ### Assumptions
-We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results and will be assumed to be misinformation, despite lack of evidence.
+We assume that all survey participants will tell the truth and will take the survey seriously. Any illogical responses (i.e. age of participant being 999 years old) will not be included in our results and will be assumed to be jokes, despite lack of evidence.
 
 ### Data Clearing
 For data clearing, we will use a function called `filter()` to remove any illogical results that may damage the reliability of our results. Responses with age being older than 30 were excluded, as we are targeting young adults 30 and below. Values that are not numerical under 'caffeine per day' has been set as non applicable data.
@@ -132,9 +132,11 @@ ggplot(Responses) +
 ```
 
 
-Looking at the graph, Those who don't use their phones before bedtime go to bed at earlier times. Most people who use their phones seem to go to bed at 1AM . On the other hand, those who don't use their phones go to bed earlier with only 1 person sleeping at 1AM, the rest sleeping earlier. However, we also have to take into account the lack of participants who don't use their phone before bed.
-### Conclusion:
-As evident through the results, young adults who use their phones before bedtime are more likely to go to bed at later times as well as experience poorer quality of sleep. Those who don't, are more likely to sleep at earlier times and experience better sleep quality.
+Looking at the graph, Those who don't use their phones before bedtime go to bed at earlier times. Most people who us their phones seem to go to bed at 1AM . On the other hand, Those who don't use their phones go to bed earlier with only 1 person sleeping at 1AM, the rest sleeping earlier. However, we also have to take into account the lack of participants who don't us their phone before bed.
+
+
+#### Conclusion:
+As evident through the results, young adults who use their phones before bedtime are more likely to go to bed at later times as well as experience poorer quality of sleep. Those who don't, aree more likely to sleep at earlier times and experience better quality sleep.
 
 
 ## Research Question 2
@@ -150,11 +152,8 @@ ggplot(Responses, aes(x=`Screen time`, y=`Hours of sleep`)) +
   scale_x_continuous(breaks = 0:16) + 
   labs(x = "Screen Time (Hours)", y = "Sleeping Duration (Hours)", title = "Scatter plot of Sleeping Duration against Screen Time")
 ```
-```{r, message = F, warning = F}
-correlation = cor(Responses$`Screen time`, Responses$`Hours of sleep`)
-print(paste0("Correlation Coefficient = ", correlation), quote=F)
-```
 
+Correlation Coefficient = 0.0214867
 <br>
 From this linear regression graph, we can conclude that sleeping duration is not influenced by screen time since the correlation coefficient shown above is near 0 and positive. However, the area of the standard error above is incredibly significant. Hence, it could also be said that the projected values shown above are far from accurate as well.
 
@@ -164,7 +163,6 @@ ggplot(l_m, aes(x=.fitted, y=.resid)) +
   geom_point() +
   ylab("Residual") +
   xlab("Fitted") +
-  ggtitle("Residual vs Fitted") +
   geom_hline(yintercept = 0, color="blue")
 ```
 
@@ -176,7 +174,7 @@ Summary:<br>
 The data we have received is insufficient to make a hypothesis as to whether screen time has an affect on duration of sleep.
 
 ## Article
-Studies exploring the relationship between screen time and quality corresponded with data collected to an extent; with Asamaa's study (2023) observing that people who used smartphones before bedtime experienced significantly worse sleep quality with 64.2% reporting issues, compared to only 31.7% of non-users. Furthermore, smartphone users at bedtime also reported to have shorter durations of sleep.
+Studies exploring the relationship between screen time and quality corresponded with data collected to an extent; Asamaa's study (2023) found a correlation between screen time before bed and sleep quality, with smartphone users experiencing notably poorer sleep quality (64.2%) compared to non-users (31.7%). Additionally, smartphone users reported shorter time to fall asleep
 
 
 # References
